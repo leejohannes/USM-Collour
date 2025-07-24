@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USM Degree Colours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d5d5d5;
+            background-image: 
+                /* 150%密度的随机分布回字纹图案 */
+                repeating-linear-gradient(
+                    0deg,
+                    #d0d0d0 0px,
+                    #d0d0d0 1px,
+                    transparent 1px,
+                    transparent 12px,
+                    #d0d0d0 12px,
+                    #d0d0d0 13px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    #d0d0d0 0px,
+                    #d0d0d0 1px,
+                    transparent 1px,
+                    transparent 12px,
+                    #d0d0d0 12px,
+                    #d0d0d0 13px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 3px,
+                    #d0d0d0 3px,
+                    #d0d0d0 4px,
+                    transparent 4px,
+                    transparent 9px,
+                    #d0d0d0 9px,
+                    #d0d0d0 10px,
+                    transparent 10px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 3px,
+                    #d0d0d0 3px,
+                    #d0d0d0 4px,
+                    transparent 4px,
+                    transparent 9px,
+                    #d0d0d0 9px,
+                    #d0d0d0 10px,
+                    transparent 10px
+                ),
+                /* 第二套图案 */
+                repeating-linear-gradient(
+                    0deg,
+                    #d0d0d0 0px,
+                    #d0d0d0 1px,
+                    transparent 1px,
+                    transparent 10px,
+                    #d0d0d0 10px,
+                    #d0d0d0 11px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    #d0d0d0 0px,
+                    #d0d0d0 1px,
+                    transparent 1px,
+                    transparent 10px,
+                    #d0d0d0 10px,
+                    #d0d0d0 11px
+                );
+            background-size: 13px 13px, 13px 13px, 13px 13px, 13px 13px, 11px 11px, 11px 11px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 6px 4px, 6px 4px, 9px 7px, 9px 7px, 2px 5px, 2px 5px, 7px 2px, 7px 2px;
+            margin: 0;
+            padding: 40px;
+            width: 100vw;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 30px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-left: -3em;
+        }
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .color-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: transparent;
+            border: 0;
+        }
+        .color-table th {
+            background-color: transparent;
+            padding: 3px 0;
+            font-weight: normal;
+            font-size: 14px;
+            border: 0px transparent;
+        }
+        .color-table th .malay {
+            font-weight: bold;
+        }
+        .color-table th .english {
+            font-weight: normal;
+            font-style: italic;
+        }
+        .color-table th.header-left {
+            text-align: right;
+            width: 35%;
+        }
+        .color-table th.header-center {
+            text-align: center;
+            width: 24%;
+        }
+        .color-table th.header-right {
+            text-align: left;
+            width: 41%;
+        }
+        .color-table td {
+            padding: 3px 0;
+            border: 0px transparent;
+            font-size: 12px;
+            vertical-align: middle;
+            background: transparent;
+        }
+        .color-table td.color-strip {
+            padding: 3px 8px;
+        }
+        .color-name {
+            text-align: right;
+            font-weight: bold;
+            width: 35%;
+        }
+        .color-name .malay {
+            font-weight: bold;
+        }
+        .color-name .english {
+            font-weight: normal;
+            font-style: italic;
+        }
+        .color-strip {
+            text-align: center;
+            width: 24%;
+        }
+        .color-block {
+            width: 216px;
+            height: 36px;
+            border: none;
+            margin: 0 auto;
+        }
+        .color-block.white {
+            border: 1px solid #bbb;
+        }
+        .degree-name {
+            text-align: left;
+            width: 41%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .degree-name .malay {
+            font-weight: bold;
+        }
+        .degree-name .english {
+            font-weight: normal;
+            font-style: italic;
+        }
+        .striped-gold {
+            background: linear-gradient(to bottom, 
+                #FFD700 0%, #FFD700 20%, 
+                #ADFF2F 20%, #ADFF2F 80%, 
+                #FFD700 80%, #FFD700 100%);
+        }
+        .white-gold-stripe {
+            background: linear-gradient(to bottom, 
+                #FFD700 0%, #FFD700 20%, 
+                #FFFFFF 20%, #FFFFFF 80%, 
+                #FFD700 80%, #FFD700 100%);
+        }
+        .lightblue-gold-stripe {
+            background: linear-gradient(to bottom, 
+                #FFD700 0%, #FFD700 20%, 
+                #7FCDCD 20%, #7FCDCD 80%, 
+                #FFD700 80%, #FFD700 100%);
+        }
+        .purple-gold-stripe {
+            background: linear-gradient(to bottom, 
+                #FFD700 0%, #FFD700 20%, 
+                #D96DD9 20%, #D96DD9 80%, 
+                #FFD700 80%, #FFD700 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="main-title">SENARAI WARNA IJAZAH USM</div>
+            <div class="subtitle">LIST OF USM'S DEGREE COLOURS</div>
+        </div>
+        
+        <table class="color-table">
+            <thead>
+                <tr>
+                    <th class="header-left"><span class="malay">WARNA IJAZAH</span><br><span class="english">COLOUR OF DEGREE</span></th>
+                    <th class="header-center"></th>
+                    <th class="header-right"><span class="malay">IJAZAH</span><br><span class="english">DEGREE</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="color-name"><span class="malay">UNGU LEMBUT</span><br><span class="english">LILAC</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #FFB6C1;"></div></td>
+                    <td class="degree-name"><span class="malay">FARMASI</span><br><span class="english">PHARMACY</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">HIJAU TUA</span><br><span class="english">DARK GREEN</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #228B22;"></div></td>
+                    <td class="degree-name"><span class="malay">KEJURUTERAAN</span><br><span class="english">ENGINEERING</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">BIRU LEMBUT</span><br><span class="english">LIGHT BLUE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #87CEEB;"></div></td>
+                    <td class="degree-name"><span class="malay">KOMUNIKASI</span><br><span class="english">COMMUNICATION</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">PUTIH</span><br><span class="english">WHITE</span></td>
+                    <td class="color-strip"><div class="color-block white" style="background-color: #FFFFFF;"></div></td>
+                    <td class="degree-name"><span class="malay">PENDIDIKAN</span><br><span class="english">EDUCATION</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">PERAK</span><br><span class="english">SILVER</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #C0C0C0;"></div></td>
+                    <td class="degree-name"><span class="malay">PENGURUSAN</span><br><span class="english">MANAGEMENT</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">MERAH</span><br><span class="english">CRIMSON</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #8B0000;"></div></td>
+                    <td class="degree-name"><span class="malay">PERUBATAN</span><br><span class="english">MEDICINE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">EMAS</span><br><span class="english">GOLD</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #FFD000;"></div></td>
+                    <td class="degree-name"><span class="malay">SAINS</span><br><span class="english">SCIENCE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">UNGU PUCAT</span><br><span class="english">PALE PURPLE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #D96DD9;"></div></td>
+                    <td class="degree-name"><span class="malay">SAINS DENGAN PENDIDIKAN</span><br><span class="english">SCIENCE WITH EDUCATION</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">UNGU PUCAT</span><br><span class="english">PALE PURPLE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #D96DD9;"></div></td>
+                    <td class="degree-name"><span class="malay">SASTERA DENGAN PENDIDIKAN</span><br><span class="english">ARTS WITH EDUCATION</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">HIJAU MUDA BERTERANG JALUR EMAS</span><br><span class="english">BRIGHT LIGHT GREEN WITH GOLD STRIPE</span></td>
+                    <td class="color-strip"><div class="color-block striped-gold"></div></td>
+                    <td class="degree-name"><span class="malay">SAINS GUNAAN</span><br><span class="english">APPLIED SCIENCE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">JINGGA</span><br><span class="english">ORANGE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #FFA500;"></div></td>
+                    <td class="degree-name"><span class="malay">KEMASYARAKATAN</span><br><span class="english">SOCIAL SCIENCE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">PERANG</span><br><span class="english">BROWN</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #8B4513;"></div></td>
+                    <td class="degree-name"><span class="malay">KOMPUTER</span><br><span class="english">COMPUTER SCIENCE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">MERAH POPI</span><br><span class="english">POPPY</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #DC143C;"></div></td>
+                    <td class="degree-name"><span class="malay">HBP</span><br><span class="english">SCIENCE (HOUSING, BUILDING & PLANNING)</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">MERAH MUDA</span><br><span class="english">LIGHT CERISE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #D51456;"></div></td>
+                    <td class="degree-name"><span class="malay">SASTERA</span><br><span class="english">ARTS</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">KUNING</span><br><span class="english">YELLOW</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #FFFF00;"></div></td>
+                    <td class="degree-name"><span class="malay">SENI BINA</span><br><span class="english">ARCHITECTURE</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">HIJAU FUCHANG</span><br><span class="english">APPLE GREEN</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #32A532;"></div></td>
+                    <td class="degree-name"><span class="malay">TEKNOLOGI</span><br><span class="english">TECHNOLOGY</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">KUNING AIR</span><br><span class="english">PALE YELLOW</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #FFFF99;"></div></td>
+                    <td class="degree-name"><span class="malay">PERAKAUNAN</span><br><span class="english">ACCOUNTING</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">BIRU TUA</span><br><span class="english">DARK BLUE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #000080;"></div></td>
+                    <td class="degree-name"><span class="malay">SENI MUZIK</span><br><span class="english">MUSIC</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">PUTIH BERTERANG JALUR EMAS</span><br><span class="english">WHITE WITH GOLD STRIPE</span></td>
+                    <td class="color-strip"><div class="color-block white-gold-stripe"></div></td>
+                    <td class="degree-name"><span class="malay">PERGIGIAN</span><br><span class="english">DENTISTRY</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">FIRUS</span><br><span class="english">TURQUOISE</span></td>
+                    <td class="color-strip"><div class="color-block" style="background-color: #7FCDCD;"></div></td>
+                    <td class="degree-name"><span class="malay">SENI HALUS</span><br><span class="english">FINE ARTS</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">BIRU MUDA BERTERANG JALUR EMAS</span><br><span class="english">LIGHT BLUE WITH GOLD STRIPE</span></td>
+                    <td class="color-strip"><div class="color-block lightblue-gold-stripe"></div></td>
+                    <td class="degree-name"><span class="malay">SAINS KESIHATAN</span><br><span class="english">HEALTH SCIENCES</span></td>
+                </tr>
+                
+                <tr>
+                    <td class="color-name"><span class="malay">UNGU PUCAT BERTERANG JALUR EMAS</span><br><span class="english">PALE PURPLE WITH GOLD STRIPE</span></td>
+                    <td class="color-strip"><div class="color-block purple-gold-stripe"></div></td>
+                    <td class="degree-name"><span class="malay">INSTRUKSI MULTIMEDIA</span><br><span class="english">INSTRUCTIONAL MULTIMEDIA</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
